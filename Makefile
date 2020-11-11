@@ -26,27 +26,27 @@ RANLIB = ranlib $(NAME)
 
 REMOVE = rm -f
 
-all:	$(NAME)
+all:		$(NAME)
 
-$(NAME):
-		@$(COMPILE) $(SRC)
-		@$(LIB) $(OBJ)
-		@$(RANLIB)
+$(NAME):	$(OBJ) 
+			@$(LIB) $(OBJ)
+			@$(RANLIB)
 
-clean:
-		@$(REMOVE) $(OBJ)
-		@$(REMOVE) $(OBJ_BONUS)
+clean:	
+			@$(REMOVE) $(OBJ)
+			@$(REMOVE) $(OBJ_BONUS)
 
-fclean: clean
-		@$(REMOVE) $(NAME)
+fclean: 	clean
+			@$(REMOVE) $(NAME)
 
-re: fclean all
+re: 		fclean all
 
-bonus:	$(OBJ) $(OBJ_BONUS)
-		@$(LIB) $(NAME) $(OBJ) $(OBJ_BONUS)
-		@$(RANLIB)
+bonus:		$(OBJ) $(OBJ_BONUS)
+			@$(REMOVE) $(NAME)
+			@$(LIB) $(OBJ) $(OBJ_BONUS)
+			@$(RANLIB)
 
-.c.o:
-		@gcc -c $(SRC) $(SRC_BONUS)
+.c.o:	
+			@$(COMPILE) $< -o ${<:.c=.o}
 
-.PHONY: all clean fclean re bonus
+.PHONY: 	all clean fclean re bonus
