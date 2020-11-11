@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: burswyck <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/08 15:11:11 by burswyck          #+#    #+#             */
-/*   Updated: 2020/11/08 15:11:59 by burswyck         ###   ########.fr       */
+/*   Created: 2020/11/10 22:07:37 by burswyck          #+#    #+#             */
+/*   Updated: 2020/11/10 22:08:08 by burswyck         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_lstsize(t_list *lst)
+int		ft_lstsize(t_list *lst)
 {
-	int count;
-	t_list *temp;
+	int		count;
+	t_list	*temp;
 
 	temp = lst;
 	count = 0;

@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: burswyck <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/08 15:11:11 by burswyck          #+#    #+#             */
-/*   Updated: 2020/11/08 15:11:59 by burswyck         ###   ########.fr       */
+/*   Created: 2020/11/10 22:08:22 by burswyck          #+#    #+#             */
+/*   Updated: 2020/11/10 22:08:57 by burswyck         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list  *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *new;
-	t_list *pointer_new_first;
-
+	t_list	*new;
+	t_list	*pointer_new_first;
 
 	if (!lst || !f)
 		return (0);
 	new = ft_lstnew(f(lst->content));
-	if(!new)
+	if (!new)
 		return (0);
 	pointer_new_first = new;
 	lst = lst->next;
